@@ -1,0 +1,16 @@
+Running the project:-
+
+Terminal 1: Local blockchain
+
+cd C:\Projects\chat-dapp\contracts-project
+npx hardhat node
+
+Terminal 2: Deploy the contract
+
+cd C:\Projects\chat-dapp\contracts-project
+npx hardhat run scripts/deploy.js --network localhost
+
+Terminal 3: Frontend
+
+cd C:\Projects\chat-dapp\frontend
+npm run dev
