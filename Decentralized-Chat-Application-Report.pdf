@@ -1,0 +1,50 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 561 >>
+stream
+BT
+/F1 20 Tf
+50 760 Td
+(Decentralized Chat Application) Tj
+0 -30 Td
+/F1 12 Tf
+(Using Solidity, HardHat, React, and ethers.js) Tj
+0 -28 Td
+(Repository: SwayamShah16/Decentralized-Chat-Application) Tj
+0 -28 Td
+(Project overview: blockchain chat app on local Ethereum) Tj
+0 -28 Td
+(Messages and nicknames are stored on-chain and updated) Tj
+0 -28 Td
+(via MetaMask and smart contract events.) Tj
+0 -28 Td
+(This project demonstrates Web3 dApp development.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000063 00000 n 
+0000000128 00000 n 
+0000000287 00000 n 
+0000000897 00000 n 
+0000001502 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1560
+%%EOF
