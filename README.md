@@ -25,6 +25,7 @@ A decentralized chat application where every message is stored on an Ethereum-co
 13. [Security Notes and Limitations](#13-security-notes-and-limitations)
 14. [Future Scope](#14-future-scope)
 15. [Outputs](#15-outputs)
+16. [Performance](#16-performance)
 
 ---
 
@@ -415,3 +416,28 @@ Expected: 7 passing tests.
 ## 15. Outputs
 
 Screenshots of the working application, test results and error cases are in the [`Blockchain`](./Blockchain) folder.
+
+## 16. Performance Testing and Gas Benchmarks
+
+**Test setup:** Hardhat in-process network, Solidity 0.8.28, ethers.js v6. All 7 tests in `test/Chat.js` pass. Gas figures are from the real `Chat.sol` contract, with the optimizer off unless noted.
+
+| Operation | Gas used |
+|---|---|
+| Deploy contract | 1,019,923 (616,406 with optimizer on, about 40% less) |
+| `registerNickname` | 47,274 |
+| `sendMessage`, public, 10-byte message | 117,405 |
+| `sendMessage`, public, 140-byte message | 214,420 |
+| `sendMessage`, public, 280-byte message (max) | 306,472 |
+| `sendMessage`, direct, 10 / 140 / 280 bytes | 120,445 / 234,560 / 326,612 |
+
+**Loading message history (`getMessages`):**
+
+| Messages stored | Response time | Call gas |
+|---|---|---|
+| 100 | 49 ms | 1.5M |
+| 500 | 321 ms | 7.6M |
+| 1,000 | 773 ms | 15.4M |
+| 2,000 | Fails (out of gas on the default local call limit) | – |
+
+- A direct message costs about 3,000 to 20,000 gas more than a public one, depending on message length.
+- Loading the full history works up to about 1,000 messages. Beyond that, the frontend would need paginated reads.
