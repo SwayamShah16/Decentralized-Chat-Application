@@ -417,7 +417,8 @@ Expected: 7 passing tests.
 
 Screenshots of the working application, test results and error cases are in the [`Blockchain`](./Blockchain) folder.
 
-## 16. Performance Testing and Gas Benchmarks
+## 16. Performance 
+Testing and Gas Benchmarks
 
 **Test setup:** Hardhat in-process network, Solidity 0.8.28, ethers.js v6. All 7 tests in `test/Chat.js` pass. Gas figures are from the real `Chat.sol` contract, with the optimizer off unless noted.
 
